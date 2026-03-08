@@ -130,7 +130,11 @@ Real-time monitoring dashboard hosted on **Adafruit IO**:
 https://io.adafruit.com/thirjesi_keerthi_sree/dashboards/agriculture-monitoring-system
 
 ---
+## Project Report
 
+Detailed system design and implementation are documented in the project report.
+
+[View Project Report](docs/Environmental_Monitoring_System.pdf)
 ## Bill of Materials
 
 | Component | Estimated Cost (INR) |
