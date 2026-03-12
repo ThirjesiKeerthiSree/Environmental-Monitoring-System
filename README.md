@@ -51,25 +51,7 @@ Processed telemetry data is transmitted to the cloud via:
 
 ---
 
-## System Demonstration
 
-### System Architecture
-
-<p align="center">
-  <img src="images/wokwi_simulation_circuit.png" width="650">
-</p>
-
-### Dashboard – Normal Condition
-
-<p align="center">
-  <img src="images/dashboard_normal_state.png" width="650">
-</p>
-
-### Dashboard – Alert Condition
-
-<p align="center">
-  <img src="images/dashboard_alert_state.png" width="650">
-</p>
 
 ## Hardware Components
 
@@ -150,6 +132,27 @@ Real-time monitoring dashboard hosted on **Adafruit IO**:
 https://io.adafruit.com/thirjesi_keerthi_sree/dashboards/agriculture-monitoring-system
 
 ---
+
+## System Demonstration
+
+### System Architecture
+
+<p align="center">
+  <img src="images/wokwi_simulation_circuit.png" width="650">
+</p>
+
+### Dashboard – Normal Condition
+
+<p align="center">
+  <img src="images/dashboard_normal_state.png" width="650">
+</p>
+
+### Dashboard – Alert Condition
+
+<p align="center">
+  <img src="images/dashboard_alert_state.png" width="650">
+</p>
+
 ## Project Report
 
 Detailed system design and implementation are documented in the project report.
