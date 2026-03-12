@@ -53,17 +53,23 @@ Processed telemetry data is transmitted to the cloud via:
 
 ## System Demonstration
 
-### System Architecture (Wokwi Simulation)
+### System Architecture
 
-![System Architecture](images/wokwi_simulation_circuit.png)
+<p align="center">
+  <img src="images/wokwi_simulation_circuit.png" width="650">
+</p>
 
 ### Dashboard – Normal Condition
 
-![Dashboard Normal](images/dashboard_normal_state.png)
+<p align="center">
+  <img src="images/dashboard_normal_state.png" width="650">
+</p>
 
 ### Dashboard – Alert Condition
 
-![Dashboard Alert](images/dashboard_alert_state.png)
+<p align="center">
+  <img src="images/dashboard_alert_state.png" width="650">
+</p>
 
 ## Hardware Components
 
