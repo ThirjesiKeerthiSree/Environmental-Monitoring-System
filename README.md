@@ -157,7 +157,7 @@ https://io.adafruit.com/thirjesi_keerthi_sree/dashboards/agriculture-monitoring-
 
 Detailed system design and implementation are documented in the project report.
 
-[View Project Report](docs/Remote_Environmental_Telemetry_and_Ground_Based_Monitoring_System.pd)
+[View Project Report](docs/Remote_Environmental_Telemetry_and_Ground_Based_Monitoring_System.pdf)
 ## Bill of Materials
 
 | Component | Estimated Cost (INR) |
