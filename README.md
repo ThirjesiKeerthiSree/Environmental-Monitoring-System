@@ -1,203 +1,110 @@
-# IIoT-Based Environmental Monitoring System
+# Remote Environmental Telemetry & Ground-Based Monitoring System
 
-An Industrial Internet of Things (IIoT) based environmental monitoring system that measures **temperature, humidity, and gas concentration** and transmits real-time telemetry to a **cloud monitoring dashboard** using the **MQTT communication protocol**.
+This project is a **Ground-Based Monitoring Node** built using the **ESP32 microcontroller**. It measures **temperature, humidity, and gas levels** in real-time and transmits the data to a **cloud dashboard** using the **MQTT protocol**.
 
-The system is built using an **ESP32 microcontroller** and demonstrates a scalable architecture for **industrial safety monitoring and agricultural environmental supervision**.
-
----
-
-## Overview
-
-Continuous monitoring of environmental parameters is essential in industrial and agricultural environments to ensure operational safety and maintain optimal conditions.
-
-This project implements a **low-cost IoT telemetry system** capable of sensing environmental variables, transmitting data to the cloud, and generating automated alerts when unsafe conditions are detected.
+The system enables **remote environmental monitoring**, allowing users to track conditions from anywhere and receive **automatic alerts during emergencies**.
 
 ---
 
-## Key Features
+## 🚀 Key Features
 
-- Real-time monitoring of **temperature, humidity, and gas concentration**
-- **ESP32-based edge processing**
-- **MQTT communication** for efficient telemetry transmission
-- Cloud-based **data visualization dashboard**
-- **Automated safety alerts** for abnormal environmental conditions
-- Scalable architecture suitable for industrial and agricultural applications
-
----
-
-## System Architecture
-
-The system architecture consists of three primary layers:
-
-### 1. Sensing Layer
-Environmental parameters are measured using sensors connected to the microcontroller.
-
-- **DHT22 Sensor** – Measures temperature and humidity
-- **Gas Sensor Interface (MQ-2 simulated)** – Detects gas concentration levels
-
-### 2. Edge Processing Layer
-The **ESP32 microcontroller** performs local data processing, including:
-
-- Sensor data acquisition
-- Analog-to-digital conversion
-- Signal scaling and mapping
-- Preparation of telemetry packets
-
-### 3. Communication Layer
-Processed telemetry data is transmitted to the cloud via:
-
-- **Wi-Fi connectivity**
-- **MQTT messaging protocol**
+- **Real-Time Monitoring**: Tracks temperature, humidity, and gas levels every 10 seconds  
+- **Smart Alerts**: Sends automated email notifications during unsafe conditions  
+- **Cloud Dashboard**: Visualizes data using gauges and historical charts  
+- **Low-Bandwidth Communication**: Uses MQTT for efficient and reliable data transfer  
+- **Virtual Prototyping**: Designed and tested using the Wokwi simulation platform  
 
 ---
 
+## 🛠️ System Architecture
 
+The system operates in three stages:
 
-## Hardware Components
+### 1. Sensing
+- **DHT22 Sensor**: Measures temperature and humidity  
+- **MQ-2 Gas Sensor (Simulated)**: Detects gas concentration  
 
-| Component | Description |
-|-----------|-------------|
-| ESP32 DevKit V1 | Microcontroller with integrated Wi-Fi |
-| DHT22 Sensor | Temperature and humidity sensing |
-| MQ-2 Gas Sensor | Gas concentration detection |
-| Potentiometer | Used for gas sensor simulation |
-| Power Supply | 5V adapter or battery |
-| Enclosure | Protective housing for field deployment |
+### 2. Processing
+- **ESP32 Microcontroller**:
+  - Converts analog signals using ADC  
+  - Processes data into readable values (°C, %, PPM)  
 
----
-
-## Software and Tools
-
-- **Arduino IDE** – Firmware development
-- **Wokwi Simulation Platform** – Hardware simulation and testing
-- **Adafruit IO** – Cloud platform for telemetry visualization
-- **MQTT Protocol** – Lightweight data communication
+### 3. Telemetry
+- Data is transmitted via **Wi-Fi** using **MQTT**
+- Sent to the **Adafruit IO cloud platform**  
 
 ---
 
-## Data Flow
+## 📦 Hardware Components
 
-### Data Acquisition
-Environmental data is collected from the DHT22 sensor and gas sensor interface.
-
-### Edge Processing
-The ESP32 processes raw signals using:
-
-- 12-bit ADC conversion (0–4095)
-- Sensor value scaling
-- Conversion of analog signals into readable telemetry data
-
-### Data Transmission
-Sensor readings are published to the cloud **every 10 seconds** using MQTT.
-
-### Cloud Visualization
-The Adafruit IO dashboard provides:
-
-- Real-time gauges
-- Historical trend charts
-- Visual alert indicators
+| Component        | Function                                  |
+|-----------------|-------------------------------------------|
+| ESP32 DevKit    | Main controller with built-in Wi-Fi       |
+| DHT22 Sensor    | Temperature and humidity sensing          |
+| Potentiometer   | Simulates MQ-2 gas sensor                 |
+| Power Source    | 5V adapter or battery                     |
 
 ---
 
-## Safety Logic and Alerts
+## 💻 Software & Tools
 
-The system includes automated safety monitoring with predefined thresholds.
-
-**Alert Conditions**
-
-- Temperature > **450°C**
-- Gas concentration > **200 PPM**
-
-When triggered:
-
-- An automated **email notification** is generated
-- Dashboard indicators display warning status
-- **Hysteresis delay** prevents repeated alert notifications
+- **Embedded C++** – Firmware development for ESP32  
+- **MQTT Protocol** – Lightweight communication protocol  
+- **Adafruit IO** – Cloud dashboard and alerts  
+- **Wokwi** – Simulation and testing platform  
 
 ---
 
-## Simulation Environment
+## ⚠️ Safety Logic (Automatic Alerts)
 
-The system was designed and validated using the **Wokwi simulation platform**, allowing testing of sensor integration, data processing, and MQTT communication without physical hardware.
+The system continuously monitors environmental thresholds:
 
-Simulation Link:  
-https://wokwi.com/projects/456594262811280385
+- **Overheat Alert**: Triggered if temperature exceeds **450°C**  
+- **Gas Leak Alert**: Triggered if gas levels exceed **200 PPM**  
 
----
-
-## Cloud Dashboard
-
-Real-time monitoring dashboard hosted on **Adafruit IO**:
-
-https://io.adafruit.com/thirjesi_keerthi_sree/dashboards/agriculture-monitoring-system
+**Action Taken:**
+- Automated **email notification** is sent immediately  
+- Dashboard displays alert status  
 
 ---
 
-## System Demonstration
+## 📊 Live Links
 
-### System Architecture
+- **Circuit Simulation**: [Wokwi Project Link](https://wokwi.com/projects/456594262811280385)  
+- **Live Dashboard**: [Adafruit IO Dashboard](https://io.adafruit.com/thirjesi_keerthi_sree/dashboards/agriculture-monitoring-system)  
 
+---
+
+## 📸 Project Screenshots
+
+### 1. Circuit Design (Wokwi)
 <p align="center">
   <img src="images/wokwi_simulation_circuit.png" width="650">
 </p>
 
-### Dashboard – Normal Condition
-
+### 2. Cloud Dashboard (Normal Conditions)
 <p align="center">
   <img src="images/dashboard_normal_state.png" width="650">
 </p>
 
-### Dashboard – Alert Condition
-
+### 3. Cloud Dashboard (Alert Triggered)
 <p align="center">
   <img src="images/dashboard_alert_state.png" width="650">
 </p>
 
-## Project Report
+---
 
-Detailed system design and implementation are documented in the project report.
+## 🌟 Future Scope
 
-[View Project Report](docs/Remote_Environmental_Telemetry_and_Ground_Based_Monitoring_System.pdf)
-## Bill of Materials
-
-| Component | Estimated Cost (INR) |
-|-----------|----------------------|
-| ESP32 DevKit V1 | 600 |
-| DHT22 Sensor | 350 |
-| MQ-2 Gas Sensor | 250 |
-| IP65 Enclosure | 800 |
-| Power Adapter | 300 |
-| Wiring and PCB | 200 |
-
-**Estimated Total Cost: ₹2500**
+- Implement **LoRa communication** for long-range monitoring  
+- Add **solar power support** for autonomous operation  
+- Integrate **GPS for location-based environmental tracking**  
 
 ---
 
-## Applications
-
-- Industrial environmental monitoring
-- Agricultural climate monitoring
-- Warehouse safety monitoring
-- Smart farming systems
-- Remote telemetry systems
-
----
-
-## Future Enhancements
-
-- Integration with **LoRa or NB-IoT for long-range communication**
-- Multi-node distributed sensor networks
-- Mobile application interface
-- Data analytics for predictive monitoring
-- Integration with industrial monitoring systems
-
----
-
-## Author
+## 👨‍💻 Author
 
 **Thirjesi Keerthi Sree**  
-Electronics Engineering Student  
+B.Tech Student, IIT (ISM) Dhanbad  
 
-Project focused on **Embedded Systems, IoT Telemetry, and Industrial Monitoring Applications**.
-
----
+Focus Areas: **Embedded Systems, IoT, and Remote Telemetry**
